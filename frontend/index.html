@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Web Scraper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, <span id="username"></span>!</h1>
+            <button id="logout-btn" class="btn btn-secondary">Logout</button>
+        </header>
+
+        <section class="add-url-section">
+            <h2>Add URL to Scrape</h2>
+            <div id="add-error" class="error-message"></div>
+            <form id="add-url-form">
+                <div class="form-inline">
+                    <input type="url" id="url-input" placeholder="https://example.com" required>
+                    <button type="submit" class="btn btn-primary">Add URL</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="pages-section">
+            <h2>Your Scraped Pages</h2>
+            <div id="pages-loading" class="loading">Loading...</div>
+            <div id="pages-error" class="error-message"></div>
+            <div id="no-pages" class="no-pages" style="display: none;">
+                No pages scraped yet. Add a URL above to get started!
+            </div>
+            <table id="pages-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Links Found</th>
+                        <th>Date Added</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="pages-tbody">
+                </tbody>
+            </table>
+            <div id="pagination" class="pagination" style="display: none;">
+                <button id="prev-page" class="btn btn-small">Previous</button>
+                <span id="page-info"></span>
+                <button id="next-page" class="btn btn-small">Next</button>
+            </div>
+        </section>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
