@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Details - Web Scraper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button onclick="window.location.href='index.html'" class="btn btn-secondary">← Back to Dashboard</button>
+            <h1>Page Details</h1>
+        </header>
+
+        <div id="loading" class="loading">Loading...</div>
+        <div id="error" class="error-message"></div>
+
+        <section id="page-info" style="display: none;">
+            <h2 id="page-title"></h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>URL:</strong>
+                    <a id="page-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <div class="info-item">
+                    <strong>Status:</strong>
+                    <span id="page-status" class="status"></span>
+                </div>
+                <div class="info-item">
+                    <strong>Total Links:</strong>
+                    <span id="link-count"></span>
+                </div>
+                <div class="info-item">
+                    <strong>Scraped At:</strong>
+                    <span id="scraped-at"></span>
+                </div>
+            </div>
+            <div id="error-message" class="error-message" style="display: none;">
+                <strong>Error:</strong> <span id="error-text"></span>
+            </div>
+        </section>
+
+        <section id="links-section" style="display: none;">
+            <h3>Links Found (<span id="total-links">0</span>)</h3>
+            <div id="no-links" style="display: none;">No links found on this page.</div>
+            <table id="links-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Link Text</th>
+                        <th>URL</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="links-tbody">
+                </tbody>
+            </table>
+            <div id="links-pagination" class="pagination" style="display: none;">
+                <button id="prev-links" class="btn btn-small">Previous</button>
+                <span id="links-page-info"></span>
+                <button id="next-links" class="btn btn-small">Next</button>
+            </div>
+        </section>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/page-details.js"></script>
+</body>
+</html>
